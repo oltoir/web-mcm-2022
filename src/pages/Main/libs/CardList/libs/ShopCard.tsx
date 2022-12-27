@@ -1,7 +1,7 @@
-type Props = {
+interface Props {
 	image: string;
 	title: string;
-};
+}
 export function ShopCard(props: Props) {
 	const { image, title } = props;
 

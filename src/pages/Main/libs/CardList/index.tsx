@@ -1,5 +1,4 @@
-import { Card } from './Card';
-import { ShopCard } from './ShopCard';
+import { Card, ShopCard, ServiceCard } from './libs';
 
 const cards = [
 	{
@@ -51,6 +50,17 @@ export function CardList() {
 					/>
 				))}
 			</div>
+			<div className="flex mt-5 gap-6">
+				{cards.slice(1).map((card, index) => (
+					<Card
+						key={index}
+						title={card.title}
+						description={card.description}
+						icon={card.icon}
+						width="full"
+					/>
+				))}
+			</div>
 			<div className="mt-5">
 				<h1 className="text-black font-bold text-4xl">Продукты банка</h1>
 				<div className="flex justify-between mt-6 gap-6 ">
@@ -66,16 +76,42 @@ export function CardList() {
 					))}
 				</div>
 			</div>
-			<div className="flex justify-between mt-5 gap-6">
+			<div className="flex mt-5 gap-6">
 				{cards.slice(1).map((card, index) => (
 					<Card
 						key={index}
 						title={card.title}
 						description={card.description}
 						icon={card.icon}
-						width="1/2"
+						width="full"
 					/>
 				))}
+			</div>
+			<div className="mt-5">
+				<h1 className="text-black font-bold text-4xl">Сервисы</h1>
+				<div className="flex mt-5 gap-6">
+					{cards.slice(2).map((card, index) => (
+						<ServiceCard
+							key={index}
+							title={card.title}
+							description={card.description}
+							icon={card.icon}
+							width="full"
+						/>
+					))}
+				</div>
+				<div className="flex mt-5 gap-6">
+					{cards.slice(1).map((card, index) => (
+						<ServiceCard
+							key={index}
+							title={card.title}
+							description={card.description}
+							icon={card.icon}
+							width="full"
+							background="radial-gradient(73.2% 135.36% at 74.15% 69.72%,#ff9357 0,#ff5c2b 100%),#ffc63d"
+						/>
+					))}
+				</div>
 			</div>
 		</>
 	);

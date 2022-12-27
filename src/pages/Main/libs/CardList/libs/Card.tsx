@@ -1,9 +1,9 @@
-type Props = {
+interface Props {
 	title: string;
 	description: string;
 	icon: string;
 	width?: string;
-};
+}
 export function Card(props: Props) {
 	const { title, description, icon, width = '1/3' } = props;
 	return (

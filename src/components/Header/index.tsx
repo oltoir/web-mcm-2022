@@ -3,7 +3,7 @@ import { BottomRow, TopRow } from './libs';
 export function Header() {
 	return (
 		<div
-			className="bg-white pb-3"
+			className="bg-white pb-3 fixed w-full z-10"
 			style={{
 				boxShadow: '0 0 10px #e1e1e1',
 			}}

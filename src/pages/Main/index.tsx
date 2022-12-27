@@ -1,5 +1,6 @@
 import { MainSwiper } from 'components/MainSwiper';
-import { CardList, NavCard } from './libs';
+import { CardList } from './libs';
+import { NavCard } from 'components';
 
 const slides = [
 	{
@@ -21,7 +22,7 @@ const slides = [
 function MainPage() {
 	return (
 		<section className="h-full bg-gray-100">
-			<div className="pb-12 pt-9 mx-auto" style={{ maxWidth: '1200px' }}>
+			<div className="pb-12 pt-36 mx-auto" style={{ maxWidth: '1200px' }}>
 				<MainSwiper slides={slides} />
 				<NavCard />
 				<CardList />
