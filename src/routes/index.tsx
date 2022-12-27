@@ -4,6 +4,7 @@ import { AppTemplate } from 'templates/AppTemplate';
 
 const MainPage = lazy(() => import('pages/Main'));
 const TestPage = lazy(() => import('pages/Test'));
+const MarketPage = lazy(() => import('pages/Market'));
 
 function RootRouterWrap(): JSX.Element {
 	const routes = [
@@ -18,6 +19,10 @@ function RootRouterWrap(): JSX.Element {
 				{
 					path: '/test',
 					element: <TestPage />,
+				},
+				{
+					path: '/market',
+					element: <MarketPage />,
 				},
 			],
 		},

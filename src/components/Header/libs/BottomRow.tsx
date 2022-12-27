@@ -3,7 +3,7 @@ export function BottomRow() {
 		{
 			id: 0,
 			name: 'Магазин',
-			link: '/',
+			link: '/market',
 			icon: 'https://jusan.kz/file-server/filename?dir=icons/header-tiny&filename=shop-tiny.webp',
 			extraComponent: (
 				<span className="rounded-full bg-orange pt-0.5 pb-5 px-2.5 text-white font-bold text-sm h-5">
@@ -57,8 +57,9 @@ export function BottomRow() {
 	return (
 		<div className="flex w-full  ">
 			<div className="flex items-center gap-5">
-				{links.map((link) => (
+				{links.map((link, index) => (
 					<a
+						key={index}
 						href={link.link}
 						className="transition ease-in-out delay-200 hover:text-orange text-gray-500 flex gap-2 items-center"
 					>
