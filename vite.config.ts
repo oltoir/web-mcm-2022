@@ -9,6 +9,7 @@ export default defineConfig({
 			pages: path.resolve('src/pages/'),
 			components: path.resolve('src/components/'),
 			assets: path.resolve('src/assets/'),
+			templates: path.resolve('src/templates/'),
 		},
 	},
 	plugins: [react()],
