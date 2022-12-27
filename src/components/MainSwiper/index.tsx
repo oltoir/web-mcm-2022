@@ -18,6 +18,7 @@ export function MainSwiper(props: Props) {
 			modules={[Navigation, Pagination]}
 			className="mySwiper"
 			loop={true}
+			autoplay={{ delay: 5000 }}
 		>
 			{slides.map((slide) => (
 				<SwiperSlide>

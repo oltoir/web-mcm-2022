@@ -1,4 +1,5 @@
 import { MainSwiper } from 'components/MainSwiper';
+import { CardList, NavCard } from './libs';
 
 const slides = [
 	{
@@ -22,6 +23,8 @@ function MainPage() {
 		<section className="h-full bg-gray-100">
 			<div className="pb-12 pt-9 mx-auto" style={{ maxWidth: '1200px' }}>
 				<MainSwiper slides={slides} />
+				<NavCard />
+				<CardList />
 			</div>
 		</section>
 	);
