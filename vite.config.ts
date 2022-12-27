@@ -8,6 +8,7 @@ export default defineConfig({
 		alias: {
 			pages: path.resolve('src/pages/'),
 			components: path.resolve('src/components/'),
+			assets: path.resolve('src/assets/'),
 		},
 	},
 	plugins: [react()],
