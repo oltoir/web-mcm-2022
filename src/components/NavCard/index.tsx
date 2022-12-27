@@ -30,7 +30,7 @@ export function NavCard() {
 	return (
 		<div className="flex py-3 px-6 justify-between bg-white rounded-2xl my-8">
 			{data.map((item, index) => (
-				<a href="/" className="flex gap-3" key={index}>
+				<a href="/" className="flex gap-3 items-center" key={index}>
 					<img height="40px" width="40px" src={item.image} alt={item.name} />
 					<p className="text-gray-500 ">{item.name}</p>
 				</a>

@@ -19,7 +19,7 @@ export function BottomRow() {
 		},
 		{
 			id: 2,
-			name: 'Страхование',
+			name: 'Платежи',
 			link: '/',
 			icon: 'https://jusan.kz/file-server/filename?dir=icons/header-tiny&filename=inshurance-tiny.webp',
 		},
