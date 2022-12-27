@@ -1,5 +1,5 @@
 function MarketPage() {
-	return <div></div>;
+	return <div className="pt-36">Market</div>;
 }
 
 export default MarketPage;

@@ -3,7 +3,7 @@ export function BottomRow() {
 		{
 			id: 0,
 			name: 'Магазин',
-			link: '/',
+			link: '/market',
 			icon: 'https://jusan.kz/file-server/filename?dir=icons/header-tiny&filename=shop-tiny.webp',
 			extraComponent: (
 				<span className="rounded-full bg-orange pt-0.5 pb-5 px-2.5 text-white font-bold text-sm h-5">
