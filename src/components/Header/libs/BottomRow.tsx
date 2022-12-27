@@ -57,8 +57,9 @@ export function BottomRow() {
 	return (
 		<div className="flex w-full  ">
 			<div className="flex items-center gap-5">
-				{links.map((link) => (
+				{links.map((link, index) => (
 					<a
+						key={index}
 						href={link.link}
 						className="transition ease-in-out delay-200 hover:text-orange text-gray-500 flex gap-2 items-center"
 					>

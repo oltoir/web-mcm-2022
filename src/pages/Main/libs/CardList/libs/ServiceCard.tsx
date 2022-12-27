@@ -16,7 +16,7 @@ export function ServiceCard(props: Props) {
 	return (
 		<div
 			className={`rounded-2xl p-7 flex flex-col justify-between h-96 w-${width}`}
-			style={{ background: background }}
+			style={{ background }}
 		>
 			<div>
 				<p className="text-white font-bold text-3xl">{title}</p>

@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import { AppTemplate } from 'templates/AppTemplate';
 
-const MainPage = lazy(() => import('pages/Main'));
-const TestPage = lazy(() => import('pages/Test'));
+const MainPage = lazy(async () => await import('pages/Main'));
+const TestPage = lazy(async () => await import('pages/Test'));
 
 function RootRouterWrap(): JSX.Element {
 	const routes = [
