@@ -12,7 +12,9 @@ export function TopRow() {
 						</a>
 					</div>
 					<button className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
-						Банк
+						<a href="/cabinet">
+							Банк
+						</a>
 					</button>
 					<button className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
 						Бизнес

@@ -5,6 +5,7 @@ import { AppTemplate } from 'templates/AppTemplate';
 const MainPage = lazy(async () => await import('pages/Main'));
 const TestPage = lazy(async () => await import('pages/Test'));
 const MarketPage = lazy(async () => await import('pages/Market'));
+const CabinetPage = lazy(async () => await import('pages/Cabinet'));
 const BasketPage = lazy(async () => await import('pages/Basket'));
 
 function RootRouterWrap(): JSX.Element {
@@ -29,6 +30,10 @@ function RootRouterWrap(): JSX.Element {
 					path: '/basket',
 					element: <BasketPage />,
 				},
+				{
+					path: '/cabinet',
+					element: <CabinetPage />,
+				}
 			],
 		},
 		{
