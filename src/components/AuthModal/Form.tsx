@@ -16,7 +16,7 @@ export function Form(props: Props) {
 	} = methods;
 
 	const {
-		login: { mutate, isLoading, isError },
+		login: { mutate },
 	} = useAuth();
 	const onSubmit = (data: any) => {
 		mutate(data, {
@@ -29,6 +29,7 @@ export function Form(props: Props) {
 	return (
 		<div className="flex flex-col gap-5 w-96 mt-8">
 			<FormProvider {...methods}>
+				{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex flex-col gap-5 w-full">
 						<label htmlFor="email">Почта</label>
@@ -67,10 +68,10 @@ export function Form(props: Props) {
 						)}
 						<button
 							className="bg-orange text-white font-bold
-						text-lg rounded-full px-5 py-3 w-full"
+						text-lg rounded-full px-5 py-3 w-full "
 							type="submit"
 						>
-							войти
+							Войти
 						</button>
 					</div>
 				</form>

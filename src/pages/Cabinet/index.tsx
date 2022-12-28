@@ -1,7 +1,7 @@
-import { IUser } from "core/models/user";
-import { useState } from "react";
-import EditUser from "./libs/EditUser";
-import UserCard from "./libs/UserCard";
+import { IUser } from 'core/models/user';
+import { useState } from 'react';
+import EditUser from './libs/EditUser';
+import UserCard from './libs/UserCard';
 
 function CabinetPage() {
 	const tempUser: IUser = {
@@ -23,7 +23,8 @@ function CabinetPage() {
 				<div className="flex gap-4 mt-4">
 					<button
 						onClick={() => setIsEditUserVisible(true)}
-						className="px-4 py-2 text-sm font-bold text-white bg-orange rounded-full">
+						className="px-4 py-2 text-sm font-bold text-white bg-orange rounded-full"
+					>
 						Редактировать
 					</button>
 					<button className="px-4 py-2 text-sm font-bold text-orange bg-white rounded-full">

@@ -26,7 +26,14 @@ export function AuthModal() {
 
 	return (
 		<div className="z-50">
-			<button onClick={openModal}>войти</button>
+			<button
+				onClick={openModal}
+				className="rounded-xl py-4 px-5
+			text-gray-400 hover:bg-gray-100
+			hover:text-black text-lg"
+			>
+				Войти
+			</button>
 			<Modal
 				isOpen={isOpen}
 				onRequestClose={closeModal}
@@ -39,7 +46,7 @@ export function AuthModal() {
 				>
 					X
 				</button>
-				<Form />
+				<Form closeModal={closeModal} />
 			</Modal>
 		</div>
 	);

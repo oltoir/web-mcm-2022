@@ -1,6 +1,6 @@
 # web-mcm-2022
- Frontend project copy of jusan.kz and jmart.kz for MCM Web Programming 2022 course
 
+Frontend project copy of jusan.kz and jmart.kz for MCM Web Programming 2022 course
 
 Getting Started with Project
 
@@ -21,6 +21,7 @@ Run following script to install `node_modules`:
 ```bash
 yarn install
 ```
+
 ## Used Technologies
 
 1. [Tailwind](https://tailwindcss.com/) is used for creating UI, has range of classes, is easy to customize
@@ -28,6 +29,7 @@ yarn install
 3. [React Query](https://react-query.tanstack.com/) is used to fetch, cache and update data in application all without touching any "global state"
 
 ## Scripts
+
 ### `yarn dev`
 
 Runs the app in the development mode.\
@@ -35,6 +37,7 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
 ## Code Structure
 
 Most things are located in `src` folder:
@@ -51,4 +54,3 @@ Most things are located in `src` folder:
    - `hooks.ts` here we create our [custom hooks](https://react-query.tanstack.com/examples/custom-hooks) that are based on core hooks of `React Query` like `useQuery`, `useMutation`
    - `index.ts` import all from files above and exports them, in order to make more comfortable to import something from store modules
 6. `templates` some pages have the same structure, most of them have `Header`. Instead of putting `Header` in each page, we create `AppTemplate` and wrap necessary pages via [outlets](https://reactrouter.com/docs/en/v6/getting-started/concepts#outlets)
-

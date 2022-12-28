@@ -10,41 +10,41 @@
 // payment_id: Optional[int] # Совершенный платеж
 
 export interface ITransactionLog {
-    id?: number;
-    createdAt?: Date;
-    updatedAt?: Date;
-    sum?: number;
-    kind?: string;
-    userId?: number;
-    orderId?: number;
-    recipientAccountId?: number;
-    paymentId?: number;
+	id?: number;
+	createdAt?: Date;
+	updatedAt?: Date;
+	sum?: number;
+	kind?: string;
+	userId?: number;
+	orderId?: number;
+	recipientAccountId?: number;
+	paymentId?: number;
 }
 
 export function toTransactionLog(data: any): ITransactionLog {
-    return {
-        id: data.id,
-        createdAt: data.created_at,
-        updatedAt: data.updated_at,
-        sum: data.sum,
-        kind: data.kind,
-        userId: data.user_id,
-        orderId: data.order_id,
-        recipientAccountId: data.recipient_account_id,
-        paymentId: data.payment_id,
-    }
+	return {
+		id: data.id,
+		createdAt: data.created_at,
+		updatedAt: data.updated_at,
+		sum: data.sum,
+		kind: data.kind,
+		userId: data.user_id,
+		orderId: data.order_id,
+		recipientAccountId: data.recipient_account_id,
+		paymentId: data.payment_id,
+	};
 }
 
 export function toTransactionLogDTO(transactionLog: ITransactionLog) {
-    return {
-        id: transactionLog.id,
-        created_at: transactionLog.createdAt,
-        updated_at: transactionLog.updatedAt,
-        sum: transactionLog.sum,
-        kind: transactionLog.kind,
-        user_id: transactionLog.userId,
-        order_id: transactionLog.orderId,
-        recipient_account_id: transactionLog.recipientAccountId,
-        payment_id: transactionLog.paymentId,
-    }
+	return {
+		id: transactionLog.id,
+		created_at: transactionLog.createdAt,
+		updated_at: transactionLog.updatedAt,
+		sum: transactionLog.sum,
+		kind: transactionLog.kind,
+		user_id: transactionLog.userId,
+		order_id: transactionLog.orderId,
+		recipient_account_id: transactionLog.recipientAccountId,
+		payment_id: transactionLog.paymentId,
+	};
 }
