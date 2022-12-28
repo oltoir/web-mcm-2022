@@ -20,8 +20,8 @@ export function MainSwiper(props: Props) {
 			loop={true}
 			autoplay={{ delay: 5000 }}
 		>
-			{slides.map((slide) => (
-				<SwiperSlide>
+			{slides.map((slide, index) => (
+				<SwiperSlide key={index}>
 					<a href={slide.href}>
 						<img src={slide.image} alt={slide.href} />
 					</a>
