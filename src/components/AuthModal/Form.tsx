@@ -19,7 +19,12 @@ export function Form(props: Props) {
 		login: { mutate },
 	} = useAuth();
 	const onSubmit = (data: any) => {
-		mutate(data, {
+		console.log(data)
+		const formData = new FormData();
+		for (const [key, value] of Object.entries(data)) {
+			formData.append(key, value);
+		}
+		mutate(formData, {
 			onSuccess: () => {
 				closeModal();
 			},
@@ -38,7 +43,7 @@ export function Form(props: Props) {
 						rounded-xl w-full placeholder-gray-400 text-sm"
 							type="email"
 							placeholder="example@gmail.com"
-							{...register('email', {
+							{...register('username', {
 								required: 'Почта обязательна',
 								pattern: {
 									value: emailRegex,
@@ -46,8 +51,8 @@ export function Form(props: Props) {
 								},
 							})}
 						/>
-						{errors.email != null && (
-							<p className="text-orange"> {errors.email.message}</p>
+						{errors.username != null && (
+							<p className="text-orange"> {errors.username.message}</p>
 						)}
 						<label htmlFor="password">Пароль</label>
 						<input

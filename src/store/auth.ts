@@ -8,7 +8,7 @@ export const useAuth = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const login = useMutation((params: LoginRequest) => loginRequest(params), {
+	const login = useMutation((params: FormData) => loginRequest(params), {
 		onSuccess: ({ data: { access_token: token, token_type: tokenType } }) => {
 			localStorage.setItem('token', token);
 			localStorage.setItem('tokenType', tokenType);

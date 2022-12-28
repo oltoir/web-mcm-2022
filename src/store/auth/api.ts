@@ -1,14 +1,15 @@
-import { LoginRequest, LoginResponseRaw } from './type';
-import { request } from 'store/axios';
+import { LoginResponseRaw } from './type';
+import { requestLogin} from 'store/axios';
 import { AxiosResponse } from 'axios';
 import { ResponseData } from 'store/types';
 
 export const login = (
-	params: LoginRequest
+	params: FormData
 ): Promise<AxiosResponse<ResponseData<LoginResponseRaw>>> => {
+	console.log('params',params)
 	const url = 'v1/login/access-token/';
 
-	return request.post(url, params);
+	return requestLogin.post(url, params);
 };
 
 export const logout = () => localStorage.clear();
