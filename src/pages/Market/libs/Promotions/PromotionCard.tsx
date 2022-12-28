@@ -3,7 +3,6 @@ interface Props {
 }
 export function PromotionCard(props: Props) {
 	const { image } = props;
-	console.log(image);
 
 	return (
 		<a href="#" style={{ height: '210px' }}>

@@ -1,5 +1,6 @@
 import { MainSwiper, NavCard } from 'components';
-import { Promotions } from './libs';
+import { Products, Promotions } from './libs';
+import { Categories } from './libs/Categories';
 
 const slides = [
 	{
@@ -25,6 +26,8 @@ function MarketPage() {
 				<MainSwiper slides={slides} />
 				<NavCard />
 				<Promotions />
+				<Products />
+				<Categories />
 			</div>
 		</section>
 	);
