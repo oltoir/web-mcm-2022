@@ -12,6 +12,7 @@ export default defineConfig({
 			templates: path.resolve('src/templates/'),
 			core: path.resolve('src/core/'),
 			contexts: path.resolve('src/contexts/'),
+			store: path.resolve('src/store/'),
 		},
 	},
 	plugins: [react()],

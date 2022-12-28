@@ -1,4 +1,5 @@
 import { Logo } from 'components/Logo';
+import { AuthModal } from 'components/AuthModal';
 
 export function TopRow() {
 	return (
@@ -20,6 +21,7 @@ export function TopRow() {
 						Private
 					</button>
 				</div>
+				<AuthModal />
 				<div className="flex gap-x-2.5 items-center">
 					<div className="flex">
 						<input

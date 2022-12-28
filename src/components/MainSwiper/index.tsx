@@ -3,12 +3,12 @@ import 'swiper/css';
 import { Navigation, Pagination } from 'swiper';
 import 'assets/styles/swiper.css';
 
-type Props = {
+interface Props {
 	slides: {
 		image: string;
 		href: string;
 	}[];
-};
+}
 export function MainSwiper(props: Props) {
 	const { slides } = props;
 
