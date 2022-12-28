@@ -1,12 +1,14 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { emailRegex } from 'core/helpers';
 import { useAuth } from 'store';
+import React from "react";
 
 interface Props {
 	closeModal: () => void;
+	setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export function Form(props: Props) {
-	const { closeModal } = props;
+export function LoginForm(props: Props) {
+	const { closeModal,setIsRegister } = props;
 	const methods = useForm();
 
 	const {
@@ -19,7 +21,6 @@ export function Form(props: Props) {
 		login: { mutate },
 	} = useAuth();
 	const onSubmit = (data: any) => {
-		console.log(data)
 		const formData = new FormData();
 		for (const [key, value] of Object.entries(data)) {
 			formData.append(key, value);
@@ -27,12 +28,14 @@ export function Form(props: Props) {
 		mutate(formData, {
 			onSuccess: () => {
 				closeModal();
+				window.location.reload();
 			},
 		});
 	};
 
 	return (
 		<div className="flex flex-col gap-5 w-96 mt-8">
+			<p className="text-bold text-orange text-xl">Войти</p>
 			<FormProvider {...methods}>
 				{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 				<form onSubmit={handleSubmit(onSubmit)}>
@@ -78,6 +81,7 @@ export function Form(props: Props) {
 						>
 							Войти
 						</button>
+						<button className='text-orange' onClick={()=>setIsRegister(true)}>Регистрация</button>
 					</div>
 				</form>
 			</FormProvider>

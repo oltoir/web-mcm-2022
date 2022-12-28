@@ -10,12 +10,15 @@ export const useAuth = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 
-	const login = useMutation(async (params: FormData) => await loginRequest(params), {
-		onSuccess: ({ data: { access_token: token, token_type: tokenType } }) => {
-			localStorage.setItem('token', token);
-			localStorage.setItem('tokenType', tokenType);
-		},
-	});
+	const login = useMutation(
+		async (params: FormData) => await loginRequest(params),
+		{
+			onSuccess: ({ data: { access_token: token, token_type: tokenType } }) => {
+				localStorage.setItem('token', token);
+				localStorage.setItem('tokenType', tokenType);
+			},
+		}
+	);
 
 	return {
 		login,

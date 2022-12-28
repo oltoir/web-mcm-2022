@@ -1,9 +1,9 @@
 import { IUser } from 'core/models/user';
 import { useEffect, useState } from 'react';
-import { getMe } from 'store/auth/api';
+import {getMe, logout} from 'store/auth/api';
 import EditUser from './libs/EditUser';
 import UserCard from './libs/UserCard';
-
+import {useNavigate} from "react-router-dom";
 
 function CabinetPage() {
 	const tempUser: IUser = {
@@ -16,9 +16,11 @@ function CabinetPage() {
 	};
 
 	useEffect(() => {
-		getMe().then((myAccount) => {
-			console.log('myAccount', myAccount);
-		}).catch(console.error);
+		getMe()
+			.then((myAccount) => {
+				console.log('myAccount', myAccount);
+			})
+			.catch(console.error);
 	}, []);
 
 	const [user] = useState<IUser | null>(tempUser);
@@ -35,7 +37,9 @@ function CabinetPage() {
 					>
 						Редактировать
 					</button>
-					<button className="px-4 py-2 text-sm font-bold text-orange bg-white rounded-full">
+					<button
+						onClick={logout}
+						className="px-4 py-2 text-sm font-bold text-orange bg-white rounded-full">
 						Выйти
 					</button>
 				</div>
