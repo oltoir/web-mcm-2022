@@ -16,7 +16,7 @@ export function BottomRow() {
 		{
 			id: 1,
 			name: 'Мой банк',
-			link: '/',
+			link: '/cabinet',
 			icon: 'https://jusan.kz/file-server/filename?dir=icons/header-tiny&filename=invest-tiny.webp',
 		},
 		{
