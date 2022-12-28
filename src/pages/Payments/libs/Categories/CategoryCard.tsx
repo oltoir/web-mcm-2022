@@ -1,10 +1,11 @@
 interface Props {
     id: number;
 	title: string;
+    image: string;
     onCategoryClick: (categoryId: number) => void;
 }
 export function CategoryCard(props: Props) {
-	const { id, title, onCategoryClick } = props;
+	const { id, title, image, onCategoryClick } = props;
 
     function onClick() {
         onCategoryClick(id);
@@ -18,9 +19,12 @@ export function CategoryCard(props: Props) {
 					width: '215px',
 					height: '50px',
 					border: '1px solid #E5E5E5',
+                    display: 'flex',
+                    alignItems: 'center'
 				}}
 			>
-				<p className="absolute left-3 top-3">{title}</p>
+				<p>{title}</p>
+                <img src={image} alt={title} style={{marginLeft: '3px', height: '32px', width: '32px'}}/>
 			</div>
 		</a>
 	);
