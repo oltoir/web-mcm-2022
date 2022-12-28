@@ -3,20 +3,20 @@ export type ResponseData<T> = T & {
 	message: string;
 };
 
-export type PaginatedResponseData<T> = {
+export interface PaginatedResponseData<T> {
 	items: T;
 	total: number;
 	page: number;
 	size: number;
-};
+}
 
-export type PaginatedStateData<T> = {
+export interface PaginatedStateData<T> {
 	items: T;
 	total: number;
-};
+}
 
-export type FailedResponseData = {
+export interface FailedResponseData {
 	code: number;
 	message: string;
 	errors: Record<string, string>;
-};
+}

@@ -17,9 +17,9 @@ function Basket() {
 		);
 	}
 
-	const totalPrice = basket.reduce((acc: number, item) => acc + item.price, 0);
+	const totalPrice = basket.reduce((acc: number, item: { price: number }) => acc + item.price, 0);
 
-	const uniqueItems: { [key: string]: any } = {};
+	const uniqueItems: Record<string, any> = {};
 
 	// Iterate over the items and add each unique item to the object
 	for (const item of basket) {

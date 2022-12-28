@@ -1,14 +1,14 @@
-export type LoginRequest = {
+export interface LoginRequest {
 	username: string;
 	password: string;
-};
+}
 
-export type LoginResponseRaw = {
+export interface LoginResponseRaw {
 	access_token: string;
 	token_type: string;
-};
+}
 
-export type LoginResponse = {
+export interface LoginResponse {
 	token: string;
 	tokenType: string;
-};
+}

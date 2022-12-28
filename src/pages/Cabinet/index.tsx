@@ -1,7 +1,9 @@
 import { IUser } from 'core/models/user';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getMe } from 'store/auth/api';
 import EditUser from './libs/EditUser';
 import UserCard from './libs/UserCard';
+
 
 function CabinetPage() {
 	const tempUser: IUser = {
@@ -12,6 +14,12 @@ function CabinetPage() {
 		email: 'test@gmail.com',
 		avatarUrl: 'https://i.pravatar.cc/150?img=1',
 	};
+
+	useEffect(() => {
+		getMe().then((myAccount) => {
+			console.log('myAccount', myAccount);
+		}).catch(console.error);
+	}, []);
 
 	const [user] = useState<IUser | null>(tempUser);
 	const [isEditUserVisible, setIsEditUserVisible] = useState(false);

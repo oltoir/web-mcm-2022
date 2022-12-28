@@ -37,11 +37,11 @@ export function Form(props: Props) {
 				{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex flex-col gap-5 w-full">
-						<label htmlFor="email">Почта</label>
+						<label htmlFor="username">Почта</label>
 						<input
 							className="flex bg-gray-100 py-3 px-4
 						rounded-xl w-full placeholder-gray-400 text-sm"
-							type="email"
+							type="username"
 							placeholder="example@gmail.com"
 							{...register('username', {
 								required: 'Почта обязательна',
@@ -63,7 +63,7 @@ export function Form(props: Props) {
 							{...register('password', {
 								required: 'Пароль обязателен',
 								minLength: {
-									value: 6,
+									value: 3,
 									message: 'Минимальная длина пароля 6 символов',
 								},
 							})}

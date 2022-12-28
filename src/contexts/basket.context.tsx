@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
+/* eslint-disable no-case-declarations */
 import React, { createContext, useContext, useReducer } from 'react';
 
 interface Props {

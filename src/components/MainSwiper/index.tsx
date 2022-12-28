@@ -4,10 +4,10 @@ import { Navigation, Pagination } from 'swiper';
 import 'assets/styles/swiper.css';
 
 interface Props {
-	slides: {
+	slides: Array<{
 		image: string;
 		href: string;
-	}[];
+	}>;
 }
 export function MainSwiper(props: Props) {
 	const { slides } = props;
