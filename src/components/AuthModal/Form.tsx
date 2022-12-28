@@ -16,10 +16,15 @@ export function Form(props: Props) {
 	} = methods;
 
 	const {
-		login: { mutate, isLoading, isError },
+		login: { mutate },
 	} = useAuth();
 	const onSubmit = (data: any) => {
-		mutate(data, {
+		console.log(data)
+		const formData = new FormData();
+		for (const [key, value] of Object.entries(data)) {
+			formData.append(key, value);
+		}
+		mutate(formData, {
 			onSuccess: () => {
 				closeModal();
 			},
@@ -29,6 +34,7 @@ export function Form(props: Props) {
 	return (
 		<div className="flex flex-col gap-5 w-96 mt-8">
 			<FormProvider {...methods}>
+				{/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="flex flex-col gap-5 w-full">
 						<label htmlFor="email">Почта</label>
@@ -37,7 +43,7 @@ export function Form(props: Props) {
 						rounded-xl w-full placeholder-gray-400 text-sm"
 							type="email"
 							placeholder="example@gmail.com"
-							{...register('email', {
+							{...register('username', {
 								required: 'Почта обязательна',
 								pattern: {
 									value: emailRegex,
@@ -45,8 +51,8 @@ export function Form(props: Props) {
 								},
 							})}
 						/>
-						{errors.email != null && (
-							<p className="text-orange"> {errors.email.message}</p>
+						{errors.username != null && (
+							<p className="text-orange"> {errors.username.message}</p>
 						)}
 						<label htmlFor="password">Пароль</label>
 						<input
@@ -67,10 +73,10 @@ export function Form(props: Props) {
 						)}
 						<button
 							className="bg-orange text-white font-bold
-						text-lg rounded-full px-5 py-3 w-full"
+						text-lg rounded-full px-5 py-3 w-full "
 							type="submit"
 						>
-							войти
+							Войти
 						</button>
 					</div>
 				</form>

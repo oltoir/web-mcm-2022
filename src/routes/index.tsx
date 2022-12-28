@@ -38,7 +38,7 @@ function RootRouterWrap(): JSX.Element {
 				{
 					path: '/cabinet',
 					element: <CabinetPage />,
-				}
+				},
 			],
 		},
 		{

@@ -1,15 +1,15 @@
 interface Props {
-    title: string;
-    image: string;
-    paymentIdentifier: string;
-    onSubcategoryClick: (paymentIdentifier: string) => void;
+	title: string;
+	image: string;
+	paymentIdentifier: string;
+	onSubcategoryClick: (paymentIdentifier: string) => void;
 }
 export function SubcategoryCard(props: Props) {
-	const { title, image, paymentIdentifier, onSubcategoryClick} = props;
+	const { title, image, paymentIdentifier, onSubcategoryClick } = props;
 
-    function onClick() {
-        onSubcategoryClick(paymentIdentifier);
-    }
+	function onClick() {
+		onSubcategoryClick(paymentIdentifier);
+	}
 
 	return (
 		<a href="#" onClick={onClick}>
@@ -19,12 +19,16 @@ export function SubcategoryCard(props: Props) {
 					width: '215px',
 					height: '50px',
 					border: '1px solid #E5E5E5',
-                    display: 'flex',
-                    alignItems: 'center'
+					display: 'flex',
+					alignItems: 'center',
 				}}
 			>
 				<p>{title}</p>
-                <img src={image} alt={title} style={{marginLeft: '3px', height: '32px', width: '32px'}}/>
+				<img
+					src={image}
+					alt={title}
+					style={{ marginLeft: '3px', height: '32px', width: '32px' }}
+				/>
 			</div>
 		</a>
 	);

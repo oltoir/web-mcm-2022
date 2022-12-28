@@ -1,9 +1,18 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 export const BASE_URL = 'https://a63a-95-82-118-209.eu.ngrok.io/api/';
+export const requestLogin = axios.create({
+	baseURL: BASE_URL,
+	headers: {
+		'Access-Control-Allow-Origin': '*',
+		'Content-Type': 'application/x-www-form-urlencoded',
+	},
+});
+
 export const request = axios.create({
 	baseURL: BASE_URL,
 	headers: {
+		'Access-Control-Allow-Origin': '*',
 		'Content-Type': 'application/json',
 	},
 });
