@@ -1,3 +1,5 @@
+import { useBasket } from 'contexts/basket.context';
+
 export function BottomRow() {
 	const links = [
 		{
@@ -54,6 +56,8 @@ export function BottomRow() {
 		},
 	];
 
+	const { basket } = useBasket();
+
 	return (
 		<div className="flex w-full  ">
 			<div className="flex items-center gap-5">
@@ -68,6 +72,14 @@ export function BottomRow() {
 						{link?.extraComponent}
 					</a>
 				))}
+				<a
+					href="basket"
+					className="transition ease-in-out delay-200 hover:text-orange
+					text-gray-500 flex gap-2 items-center"
+				>
+					Корзина(
+					<span className="text-orange font-semibold">{basket.length}</span>)
+				</a>
 			</div>
 		</div>
 	);

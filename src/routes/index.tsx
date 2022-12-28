@@ -2,9 +2,10 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import { AppTemplate } from 'templates/AppTemplate';
 
-const MainPage = lazy(() => import('pages/Main'));
-const TestPage = lazy(() => import('pages/Test'));
-const MarketPage = lazy(() => import('pages/Market'));
+const MainPage = lazy(async () => await import('pages/Main'));
+const TestPage = lazy(async () => await import('pages/Test'));
+const MarketPage = lazy(async () => await import('pages/Market'));
+const BasketPage = lazy(async () => await import('pages/Basket'));
 
 function RootRouterWrap(): JSX.Element {
 	const routes = [
@@ -24,7 +25,15 @@ function RootRouterWrap(): JSX.Element {
 					path: '/market',
 					element: <MarketPage />,
 				},
+				{
+					path: '/basket',
+					element: <BasketPage />,
+				},
 			],
+		},
+		{
+			path: '*',
+			element: <div>404</div>,
 		},
 	];
 

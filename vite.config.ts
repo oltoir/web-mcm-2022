@@ -10,6 +10,8 @@ export default defineConfig({
 			components: path.resolve('src/components/'),
 			assets: path.resolve('src/assets/'),
 			templates: path.resolve('src/templates/'),
+			core: path.resolve('src/core/'),
+			contexts: path.resolve('src/contexts/'),
 		},
 	},
 	plugins: [react()],
