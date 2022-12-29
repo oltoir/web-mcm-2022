@@ -1,11 +1,15 @@
 interface Props {
 	title: string;
+	categoryId?: number;
 	image: string;
 }
 export function CategoryCard(props: Props) {
-	const { title, image } = props;
+	const { title, image, categoryId } = props;
+	// generate url to product page with category id
+	const url = categoryId ? `/products?categoryId=${categoryId}` : '/products';
+
 	return (
-		<a href="#">
+		<a href={url}>
 			<div
 				className="p-3 border-gray-100 rounded-xl relative overflow-hidden"
 				style={{
@@ -15,7 +19,7 @@ export function CategoryCard(props: Props) {
 				}}
 			>
 				<img src={image} alt={title} className="absolute left-0 bottom-0" />
-				<p className="absolute right-3 top-3">{title}</p>
+				<p className="absolute right-3 top-3 font-bold">{title}</p>
 			</div>
 		</a>
 	);

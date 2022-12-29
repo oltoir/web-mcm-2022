@@ -153,7 +153,12 @@ export function RegisterForm(props: Props) {
 						>
 							Зарегистрироваться
 						</button>
-						<button className='text-orange' onClick={()=>setIsRegister(false)}>Уже есть аккаунт? Войти</button>
+						<button
+							className="text-orange"
+							onClick={() => setIsRegister(false)}
+						>
+							Уже есть аккаунт? Войти
+						</button>
 					</div>
 				</form>
 			</FormProvider>
