@@ -1,4 +1,3 @@
-import { Comment } from './type';
 export interface LoginRequest {
 	username: string;
 	password: string;
@@ -73,8 +72,7 @@ export interface ItemList {
 export interface Category {
 	id: number;
 	title: string;
-}
-[];
+};
 
 export interface ItemsRequest {
 	categoryId?: number;

@@ -21,6 +21,7 @@ const slides = [
 		href: '/',
 	},
 ];
+
 function MarketPage() {
 	const { categories, isLoading } = useItemCategories();
 

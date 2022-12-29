@@ -141,14 +141,7 @@ export function Categories() {
 
 	function onPaymentSubmit() {
 		console.log(paymentAmount);
-		// TODO: send request to backend
-		// fetch('https://mywebsite.example/endpoint/', {
-		// 	method: 'POST',
-		// 	body: JSON.stringify({
-		// 		firstParam: 'yourValue',
-		// 		secondParam: 'yourOtherValue',
-		// 	})
-		// })
+		alert(`Платеж на сумму ${paymentAmount} успешно совершен`)
 	}
 
 	function updatePaymentIdentifierValue(e: any) {
