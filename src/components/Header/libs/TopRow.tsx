@@ -14,15 +14,21 @@ export function TopRow() {
 							<Logo />
 						</a>
 					</div>
-					<button className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
-						<a href="/cabinet">Банк</a>
-					</button>
-					<button className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
+					<a
+						href="/cabinet"
+						className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
+						Банк
+					</a>
+					<a
+						href="/cabinet"
+						className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
 						Бизнес
-					</button>
-					<button className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
-						Private
-					</button>
+					</a>
+					<a
+						href='/transfer'
+						className="rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg">
+						Переводы
+					</a>
 				</div>
 				{isLoggedIn?(<a
 					href="cabinet"
