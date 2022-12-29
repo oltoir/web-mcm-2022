@@ -4,7 +4,7 @@ import { useBuyOrder } from 'store/auth/hooks';
 import { ProductCard } from '../Market/libs/Products/ProductCard';
 
 function Basket() {
-	const { basket } = useBasket();
+	const { basket, dispatch } = useBasket();
 
 	if (basket.length === 0) {
 		return (
@@ -50,10 +50,17 @@ function Basket() {
 
 	const handleBuy = () => {
 		console.log(mutateData);
-
-		mutate({
-			items: mutateData,
-		});
+		mutate(
+			{
+				items: mutateData,
+			},
+			{
+				onSuccess: () => {
+					console.log('Вы купили товар');
+					dispatch({ type: 'CLEAR_BASKET' });
+				},
+			}
+		);
 	};
 
 	return (

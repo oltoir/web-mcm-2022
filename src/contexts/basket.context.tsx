@@ -34,7 +34,7 @@ const basketReducer = (state: any[], action: any) => {
 			];
 			localStorage.setItem('basket', JSON.stringify(filteredState));
 			return filteredState;
-		case 'CLEAR_CART':
+		case 'CLEAR_BASKET':
 			localStorage.setItem('basket', '[]');
 			return [];
 		default:

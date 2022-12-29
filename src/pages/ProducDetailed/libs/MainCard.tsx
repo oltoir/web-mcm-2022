@@ -10,14 +10,21 @@ export function MainCard(props: Props) {
 	const { mutate } = useBuyOrder();
 
 	const handleBuy = () => {
-		mutate({
-			items: [
-				{
-					item_id: item.id,
-					quantity: 1,
+		mutate(
+			{
+				items: [
+					{
+						item_id: item.id,
+						quantity: 1,
+					},
+				],
+			},
+			{
+				onSuccess: () => {
+					alert('Вы купили товар');
 				},
-			],
-		});
+			}
+		);
 	};
 
 	return (

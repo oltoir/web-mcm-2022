@@ -15,14 +15,18 @@ export function ReviewForm() {
 	const { mutate } = usePostReview(id);
 
 	const onSubmit = (data: any) => {
-		mutate({
-			...data,
-			itemId: id,
-
-			onError: (error) => {
-				console.log(error);
+		mutate(
+			{
+				...data,
+				itemId: id,
 			},
-		});
+			{
+				onSuccess: () => {
+					console.log('Success');
+					window.location.reload();
+				},
+			}
+		);
 	};
 
 	return (
