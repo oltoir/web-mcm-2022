@@ -56,7 +56,7 @@ function Basket() {
 			},
 			{
 				onSuccess: () => {
-					console.log('Вы купили товар');
+					alert('Вы купили товар');
 					dispatch({ type: 'CLEAR_BASKET' });
 				},
 			}
