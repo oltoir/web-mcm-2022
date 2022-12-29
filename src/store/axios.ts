@@ -28,7 +28,6 @@ const prettifyToken = (token: string) => {
 	return token;
 };
 
-
 function useToken(config: AxiosRequestConfig, authMethod: string) {
 	const token = localStorage.getItem('token');
 	if (!!token) {

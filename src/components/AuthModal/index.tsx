@@ -1,6 +1,7 @@
 import Modal from 'react-modal';
 import { useState } from 'react';
-import { Form } from './Form';
+import { LoginForm } from './LoginForm';
+import { RegisterForm } from './RegisterForm';
 
 export function AuthModal() {
 	const customStyles = {
@@ -15,6 +16,7 @@ export function AuthModal() {
 	};
 
 	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isReg, setIsReg] = useState<boolean>(false);
 
 	const openModal = () => {
 		setIsOpen(true);
@@ -46,7 +48,11 @@ export function AuthModal() {
 				>
 					X
 				</button>
-				<Form closeModal={closeModal} />
+				{isReg ? (
+					<RegisterForm closeModal={closeModal} setIsRegister={setIsReg} />
+				) : (
+					<LoginForm closeModal={closeModal} setIsRegister={setIsReg} />
+				)}
 			</Modal>
 		</div>
 	);

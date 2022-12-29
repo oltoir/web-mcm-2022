@@ -14,29 +14,29 @@ interface IEditUserProps {
 }
 
 async function uploadAvatar(avatarFile: File): Promise<string | null> {
-    try {
-        // Set up form data
-        const formData = new FormData();
-        formData.append('image', avatarFile);
+	try {
+		// Set up form data
+		const formData = new FormData();
+		formData.append('image', avatarFile);
 
-        // Send POST request to Imgur API to upload image
-        const response = await axios.post(
-            'https://api.imgur.com/3/image',
-            formData,
-            {
-                headers: {
-                    Authorization: 'Client-ID 82a000d086b1f1e',
-                    'Content-Type': 'multipart/form-data',
-                },
-            }
-        );
+		// Send POST request to Imgur API to upload image
+		const response = await axios.post(
+			'https://api.imgur.com/3/image',
+			formData,
+			{
+				headers: {
+					Authorization: 'Client-ID 82a000d086b1f1e',
+					'Content-Type': 'multipart/form-data',
+				},
+			}
+		);
 
-        // Return URL of uploaded image
-        return response.data.data.link;
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
+		// Return URL of uploaded image
+		return response.data.data.link;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
 }
 
 function EditUser(props: IEditUserProps) {
@@ -69,17 +69,17 @@ function EditUser(props: IEditUserProps) {
         setPassword(event.target.value);
     };
 
-    const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files != null) {
-            const avatarFile = event.target.files[0];
-            console.log(avatarFile);
+	const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
+		if (event.target.files != null) {
+			const avatarFile = event.target.files[0];
+			console.log(avatarFile);
 
-            const newAvatarUrl = await uploadAvatar(avatarFile);
-            if (newAvatarUrl) {
-                setAvatarUrl(newAvatarUrl);
-            }
-        }
-    };
+			const newAvatarUrl = await uploadAvatar(avatarFile);
+			if (newAvatarUrl) {
+				setAvatarUrl(newAvatarUrl);
+			}
+		}
+	};
 
     const handleSave = async () => {
         // send PATCH request to API

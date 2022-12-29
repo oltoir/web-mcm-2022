@@ -1,7 +1,10 @@
 import { Logo } from 'components/Logo';
 import { AuthModal } from 'components/AuthModal';
+import {useAuth} from "store";
 
 export function TopRow() {
+	const {isLoggedIn} = useAuth()
+
 	return (
 		<div className="flex w-full">
 			<div className="flex items-center justify-between w-full">
@@ -27,8 +30,7 @@ export function TopRow() {
 						Переводы
 					</a>
 				</div>
-				<AuthModal />
-				<a
+				{isLoggedIn?(<a
 					href="cabinet"
 					className="flex gap-2 items-center rounded-xl py-4 px-5 text-gray-400 hover:bg-gray-100 hover:text-black text-lg"
 				>
@@ -49,7 +51,11 @@ export function TopRow() {
 						></path>
 					</svg>
 					Мой кабинет
-				</a>
+				</a>):(
+					<AuthModal />
+
+				)}
+
 				<div className="flex gap-x-2.5 items-center">
 					<div className="flex">
 						<input
