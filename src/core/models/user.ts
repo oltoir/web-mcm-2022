@@ -43,7 +43,7 @@ export function toUser(data: any): IUser {
 		isActive: data.is_active,
 		createdAt: data.created_at,
 		updatedAt: data.updated_at,
-		avatarUrl: data.avatarUrl,
+		avatarUrl: data.avatar_url,
 	};
 }
 

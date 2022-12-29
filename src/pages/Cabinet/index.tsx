@@ -1,6 +1,8 @@
 import { IUser } from 'core/models/user';
 import { useEffect, useState } from 'react';
 import { getMe } from 'store/auth/api';
+import Account from './libs/Account';
+import Deposit from './libs/Deposit';
 import EditUser from './libs/EditUser';
 import UserCard from './libs/UserCard';
 
@@ -17,11 +19,11 @@ function CabinetPage() {
 
 	useEffect(() => {
 		getMe().then((myAccount) => {
-			console.log('myAccount', myAccount);
+			setUser(myAccount);
 		}).catch(console.error);
 	}, []);
 
-	const [user] = useState<IUser | null>(tempUser);
+	const [user, setUser] = useState<IUser | null>(tempUser);
 	const [isEditUserVisible, setIsEditUserVisible] = useState(false);
 
 	return (
@@ -40,8 +42,14 @@ function CabinetPage() {
 					</button>
 				</div>
 				{isEditUserVisible && (
-					<EditUser user={user} onClose={() => setIsEditUserVisible(false)} />
+					<EditUser
+						user={user}
+						onClose={() => setIsEditUserVisible(false)}
+						setUser={setUser}
+					/>
 				)}
+				<Account />
+				<Deposit />
 			</div>
 		</section>
 	);
