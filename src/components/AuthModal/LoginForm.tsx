@@ -1,14 +1,14 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { emailRegex } from 'core/helpers';
 import { useAuth } from 'store';
-import React from "react";
+import React from 'react';
 
 interface Props {
 	closeModal: () => void;
 	setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export function LoginForm(props: Props) {
-	const { closeModal,setIsRegister } = props;
+	const { closeModal, setIsRegister } = props;
 	const methods = useForm();
 
 	const {
@@ -81,7 +81,9 @@ export function LoginForm(props: Props) {
 						>
 							Войти
 						</button>
-						<button className='text-orange' onClick={()=>setIsRegister(true)}>Регистрация</button>
+						<button className="text-orange" onClick={() => setIsRegister(true)}>
+							Регистрация
+						</button>
 					</div>
 				</form>
 			</FormProvider>

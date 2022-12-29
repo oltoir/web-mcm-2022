@@ -2,10 +2,9 @@ import { IUser } from 'core/models/user';
 import { useEffect, useState } from 'react';
 import Account from './libs/Account';
 import Deposit from './libs/Deposit';
-import {getMe, logout} from 'store/auth/api';
+import { getMe, logout } from 'store/auth/api';
 import EditUser from './libs/EditUser';
 import UserCard from './libs/UserCard';
-import {useNavigate} from "react-router-dom";
 
 function CabinetPage() {
 	const tempUser: IUser = {
@@ -39,7 +38,8 @@ function CabinetPage() {
 					</button>
 					<button
 						onClick={logout}
-						className="px-4 py-2 text-sm font-bold text-orange bg-white rounded-full">
+						className="px-4 py-2 text-sm font-bold text-orange bg-white rounded-full"
+					>
 						Выйти
 					</button>
 				</div>

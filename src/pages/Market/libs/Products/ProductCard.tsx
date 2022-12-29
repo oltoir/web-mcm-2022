@@ -1,5 +1,5 @@
-import { numberPrettier } from 'core/helpers';
 import { useBasket } from 'contexts/basket.context';
+import { numberPrettier } from 'core/helpers';
 
 interface Product {
 	id: number;
@@ -31,8 +31,17 @@ export function ProductCard(props: Props) {
 	};
 
 	return (
-		<div className="rounded-2xl bg-white p-4 flex flex-col gap-3">
-			<img src={imageUrl} alt={title} />
+		<div
+			className="rounded-2xl bg-white p-4 flex flex-col gap-3 justify-between"
+			style={{ width: '224px' }}
+		>
+			<a href={`/products/${product.id}`}>
+				<img
+					src={imageUrl}
+					alt={title}
+					style={{ height: '160px', objectFit: 'contain' }}
+				/>
+			</a>
 			<div className="w-full">
 				<p className="whitespace-nowrap text-base text-orange font-bold">
 					{numberPrettier(price)}₸

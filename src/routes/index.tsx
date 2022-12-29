@@ -9,6 +9,8 @@ const CabinetPage = lazy(async () => await import('pages/Cabinet'));
 const BasketPage = lazy(async () => await import('pages/Basket'));
 const PaymentsPage = lazy(async () => await import('pages/Payments'));
 const TransferPage = lazy(async () => await import('pages/Transfer'));
+const ProductsPage = lazy(async () => await import('pages/Products'));
+const ProductDetailed = lazy(async () => await import('pages/ProducDetailed'));
 
 function RootRouterWrap(): JSX.Element {
 	const routes = [
@@ -43,7 +45,15 @@ function RootRouterWrap(): JSX.Element {
 				{
 					path: '/transfer',
 					element:  <TransferPage />,
-				}
+				},
+				{
+					path: '/products',
+					element: <ProductsPage />,
+				},
+				{
+					path: '/products/:id',
+					element: <ProductDetailed />,
+				},
 			],
 		},
 		{

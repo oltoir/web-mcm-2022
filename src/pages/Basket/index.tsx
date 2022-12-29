@@ -1,6 +1,7 @@
 import { useBasket } from 'contexts/basket.context';
-import { ProductCard } from '../Market/libs/Products/ProductCard';
 import { numberPrettier } from 'core/helpers';
+import { useBuyOrder } from 'store/auth/hooks';
+import { ProductCard } from '../Market/libs/Products/ProductCard';
 
 function Basket() {
 	const { basket } = useBasket();
@@ -22,6 +23,16 @@ function Basket() {
 		0
 	);
 
+	const { mutate } = useBuyOrder();
+
+	const countQuantity = (product: any): number => {
+		const isInBasketCount: number = basket.filter(
+			(item) => item.id === product.id
+		).length;
+
+		return isInBasketCount;
+	};
+
 	const uniqueItems: Record<string, any> = {};
 
 	// Iterate over the items and add each unique item to the object
@@ -31,6 +42,19 @@ function Basket() {
 
 	// Convert the object to an array
 	const uniqueBasket = Object.values(uniqueItems);
+
+	const mutateData = uniqueBasket.map((item) => ({
+		item_id: item.id,
+		quantity: countQuantity(item),
+	}));
+
+	const handleBuy = () => {
+		console.log(mutateData);
+
+		mutate({
+			items: mutateData,
+		});
+	};
 
 	return (
 		<section className="h-full bg-gray-100">
@@ -45,7 +69,10 @@ function Basket() {
 					<p>
 						Сумма: <span>{numberPrettier(totalPrice)}₸</span>
 					</p>
-					<button className="bg-orange text-white font-bold text-lg rounded-full px-5 py-3">
+					<button
+						onClick={handleBuy}
+						className="bg-orange text-white font-bold text-lg rounded-full px-5 py-3"
+					>
 						Купить
 					</button>
 				</div>

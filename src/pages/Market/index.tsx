@@ -1,4 +1,6 @@
 import { MainSwiper, NavCard } from 'components';
+import { useItemCategories } from '../../store/auth/hooks';
+import { Category } from '../../store/auth/type';
 import { Products, Promotions } from './libs';
 import { Categories } from './libs/Categories';
 
@@ -20,14 +22,22 @@ const slides = [
 	},
 ];
 function MarketPage() {
+	const { categories, isLoading } = useItemCategories();
+
+	if (isLoading) {
+		return <div>Loading...</div>;
+	}
+
 	return (
 		<section className="h-full bg-gray-100">
 			<div className="pb-12 pt-36 mx-auto" style={{ maxWidth: '1200px' }}>
 				<MainSwiper slides={slides} />
 				<NavCard />
 				<Promotions />
-				<Products />
 				<Categories />
+				{categories?.map((category: Category, index: number) => (
+					<Products category={category} key={index} />
+				))}
 			</div>
 		</section>
 	);
